@@ -1,5 +1,4 @@
-import React, { FormEventHandler, useRef } from "react";
-import Form from "./Partials/Form";
+import { FormEventHandler, useRef } from "react";
 import Layout from "@/Layouts/Layout";
 import { useForm } from "@inertiajs/react";
 import { Transition } from "@headlessui/react";

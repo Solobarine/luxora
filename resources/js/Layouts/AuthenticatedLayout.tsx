@@ -7,7 +7,6 @@ import { Link } from "@inertiajs/react";
 import { User } from "@/types";
 import Footer from "@/Components/Footer";
 import Menu from "@/Components/Menu";
-import FilterSidebar from "@/Components/FilterSideBar";
 
 export default function Authenticated({
     user,

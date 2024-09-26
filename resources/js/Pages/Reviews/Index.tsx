@@ -27,13 +27,13 @@ const Index = ({
 
     const totalReviews = 345;
     const averageRating = 4.2;
-    const ratingsBreakdown = {
-        5: 200,
-        4: 90,
-        3: 30,
-        2: 15,
-        1: 10,
-    };
+    const ratingsBreakdown = [
+        { rating: 5, amount: 200 },
+        { rating: 4, amount: 90 },
+        { rating: 3, amount: 30 },
+        { rating: 2, amount: 15 },
+        { rating: 1, amount: 10 },
+    ];
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -75,17 +75,17 @@ const Index = ({
 
                         {/* Ratings Breakdown */}
                         <div className="space-y-4">
-                            {[5, 4, 3, 2, 1].map((rating) => (
-                                <div key={rating} className="flex items-center">
+                            {ratingsBreakdown.map((score, index) => (
+                                <div key={index} className="flex items-center">
                                     <span className="text-sm font-semibold text-gray-700 dark:text-gray-300 w-12 text-nowrap">
-                                        {rating} Stars
+                                        {score.rating} Stars
                                     </span>
                                     <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-4 mx-4">
                                         <div
                                             className="bg-blue-500 h-4 rounded-full"
                                             style={{
                                                 width: `${
-                                                    (ratingsBreakdown[rating] /
+                                                    (score.amount /
                                                         totalReviews) *
                                                     100
                                                 }%`,
@@ -93,7 +93,7 @@ const Index = ({
                                         ></div>
                                     </div>
                                     <span className="text-sm text-gray-600 dark:text-gray-400 text-nowrap">
-                                        {ratingsBreakdown[rating]} reviews
+                                        {score.amount} reviews
                                     </span>
                                 </div>
                             ))}

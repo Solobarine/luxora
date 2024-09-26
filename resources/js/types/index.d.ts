@@ -29,6 +29,7 @@ interface Product {
     description: string;
     stock_quantity: number;
     price: number;
+    wishlisted?: boolean;
 }
 
 interface Products {

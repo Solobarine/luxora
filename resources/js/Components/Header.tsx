@@ -1,7 +1,7 @@
-import { PageProps } from "@/types";
+import { User } from "@/types";
 import { Link } from "@inertiajs/react";
 
-const Header = ({ auth }: PageProps) => {
+const Header = ({ auth }: { auth: { user: User | null } }) => {
     return (
         <header className="flex items-center justify-between px-10 py-2 sticky z-20 top-0 backdrop-blur-lg">
             <img src="/favicon-32x32.png" alt="Logo" />

@@ -1,5 +1,5 @@
 import Authenticated from "@/Layouts/AuthenticatedLayout";
-import { PageProps } from "@/types";
+import { PageProps, User } from "@/types";
 import React, { useState, useEffect } from "react";
 
 type Category = {
@@ -115,7 +115,7 @@ const ProductFormPage = ({ auth }: PageProps) => {
                     Create New Product
                 </h2>
             }
-            user={auth.user}
+            user={auth.user as User}
         >
             <div className="max-w-4xl mx-auto p-6">
                 <form
